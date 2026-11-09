@@ -3,137 +3,141 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>جدول سكشن 12</title>
+<title>مصروف البيت</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1e3a8a">
+<meta name="theme-color" content="#0f766e">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
-:root{--bg:#f4f6fb;--card:#fff;--text:#111827;--muted:#64748b;--line:#dbe2ee;--pri:#1e3a8a;--priText:#fff;
---inBg:#ecfdf5;--inBd:#22c55e;--inTx:#15803d;--onBg:#eff6ff;--onBd:#3b82f6;--onTx:#1d4ed8;--chip:#e2e8f0;
+:root{--bg:#f3f7f6;--card:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--pri:#0f766e;--priT:#fff;--ok:#16a34a;--warn:#f59e0b;--bad:#dc2626;--chip:#e6f4f1;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#111a2e;--text:#e5e7eb;--muted:#94a3b8;--line:#243049;--pri:#3b5bdb;--priText:#fff;--inBg:#0f2a1f;--inTx:#4ade80;--onBg:#0f1f3d;--onTx:#93c5fd;--chip:#1e293b}}
-:root[data-theme="dark"]{--bg:#0b1220;--card:#111a2e;--text:#e5e7eb;--muted:#94a3b8;--line:#243049;--pri:#3b5bdb;--priText:#fff;--inBg:#0f2a1f;--inTx:#4ade80;--onBg:#0f1f3d;--onTx:#93c5fd;--chip:#1e293b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1513;--card:#12201d;--text:#e8f0ee;--muted:#94a3a0;--line:#223632;--pri:#14b8a6;--priT:#04201c;--chip:#16302b}}
+:root[data-theme="dark"]{--bg:#0b1513;--card:#12201d;--text:#e8f0ee;--muted:#94a3a0;--line:#223632;--pri:#14b8a6;--priT:#04201c;--chip:#16302b}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.5}
-.wrap{max-width:560px;margin:0 auto;padding:14px 14px 40px}
-h1{font-size:20px;margin:4px 0 2px}
-.sub{color:var(--muted);font-size:13px;margin-bottom:12px}
-.lbl{font-size:13px;color:var(--muted);margin:12px 0 6px;font-weight:600}
-.seg{display:flex;gap:8px}
-.seg button,.days button,.today{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:12px}
-.seg button{flex:1;padding:11px 8px;font-size:15px;font-weight:700}
-.seg button.on{background:var(--pri);color:var(--priText);border-color:var(--pri)}
-.badge{display:inline-block;font-size:11px;background:#f59e0b;color:#1f2937;border-radius:8px;padding:1px 7px;margin-inline-start:6px;vertical-align:middle}
-.days{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.days button{padding:10px 4px;font-size:15px;font-weight:600;position:relative}
-.days button.on{background:var(--pri);color:var(--priText);border-color:var(--pri)}
-.days button.td::after{content:"";position:absolute;top:6px;inset-inline-end:8px;width:8px;height:8px;border-radius:50%;background:#f59e0b}
-.head{display:flex;align-items:center;justify-content:space-between;margin:18px 0 8px}
-.head h2{font-size:22px;margin:0}
-.cnt{font-size:12px;color:var(--muted)}
-.card{display:flex;border-radius:14px;margin-bottom:10px;overflow:hidden;border-inline-start:7px solid}
-.card.i{background:var(--inBg);border-color:var(--inBd)}
-.card.o{background:var(--onBg);border-color:var(--onBd)}
-.tm{width:40%;padding:12px 10px;border-inline-end:1px solid var(--line);flex:none}
-.t1{font-weight:700;font-size:15px;white-space:nowrap}
-.t2{font-size:13px;color:var(--muted);margin-top:2px}
-.bd{padding:12px 12px;flex:1}
-.tg{font-size:12px;font-weight:700}
-.i .tg{color:var(--inTx)}.o .tg{color:var(--onTx)}
-.sj{font-size:16px;font-weight:700;margin-top:1px}
-.dt{font-size:13px;color:var(--muted);margin-top:3px}
-.off{text-align:center;padding:36px 10px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:18px}
-.today{width:100%;margin-top:8px;padding:10px;font-weight:600;font-size:14px}
-.note{font-size:12.5px;color:var(--muted);margin-top:6px}
-.set{margin-top:22px;padding-top:6px;border-top:1px solid var(--line)}
+.wrap{max-width:560px;margin:0 auto;padding:12px 14px 120px}
+.top{display:flex;align-items:center;justify-content:space-between;margin:6px 0 12px}
+.top h1{font-size:19px;margin:0;text-align:center;flex:1}
+.nav{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:20px;cursor:pointer}
+.card{background:var(--card);border-radius:20px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:14px}
+.bal{background:linear-gradient(135deg,var(--pri),#115e59);color:#fff}
+.bal.warn{background:linear-gradient(135deg,#d97706,#b45309)}.bal.bad{background:linear-gradient(135deg,#dc2626,#991b1b)}
+.lbl{opacity:.85;font-size:14px}.amt{font-size:40px;font-weight:800;line-height:1.2}.amt small{font-size:16px;font-weight:600}
+.bar{height:12px;background:rgba(255,255,255,.28);border-radius:8px;margin:12px 0 8px;overflow:hidden}.bar i{display:block;height:100%;background:#fff;border-radius:8px}
+.meta{display:flex;justify-content:space-between;font-size:14px;gap:8px;flex-wrap:wrap}
+.msg{margin-top:10px;font-size:14px;background:rgba(255,255,255,.18);border-radius:12px;padding:8px 10px}
+.lnk{background:none;border:none;color:#fff;text-decoration:underline;font:inherit;cursor:pointer;padding:0}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tabs button{flex:1;padding:11px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-weight:700;cursor:pointer}
+.tabs button.on{background:var(--pri);color:var(--priT);border-color:var(--pri)}
+.day{font-size:13px;color:var(--muted);font-weight:700;margin:14px 4px 6px}
+.row{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:16px;padding:12px;margin-bottom:8px;cursor:pointer}
+.ic{width:44px;height:44px;border-radius:14px;background:var(--chip);display:grid;place-items:center;font-size:23px;flex:none}
+.rt{flex:1;min-width:0}.rt b{display:block}.rt span{font-size:13px;color:var(--muted)}
+.rm{font-weight:800;white-space:nowrap}
+.sum .top2{display:flex;justify-content:space-between;font-weight:700;margin-bottom:6px}
+.sum .pb{height:9px;background:var(--chip);border-radius:6px;overflow:hidden;margin-bottom:14px}.sum .pb i{display:block;height:100%;background:var(--pri)}
+.empty{text-align:center;color:var(--muted);padding:34px 10px}
+.fab{position:fixed;inset-inline:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:528px;margin:0 auto;border:none;border-radius:18px;background:var(--pri);color:var(--priT);font:inherit;font-size:18px;font-weight:800;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.25);cursor:pointer}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;z-index:10}.ov[hidden]{display:none}
+.sheet{background:var(--card);width:100%;max-width:560px;border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));max-height:92vh;overflow:auto}
+.sheet h3{margin:0 0 6px}.sheet label{display:block;font-size:13px;color:var(--muted);margin:12px 0 4px;font-weight:700}
+input{width:100%;font:inherit;font-size:18px;padding:12px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+#fa,#bud,#fb{font-size:28px;font-weight:800;text-align:center}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cat{border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:14px;padding:8px 4px;font:inherit;font-size:12.5px;cursor:pointer}.cat span{display:block;font-size:24px}
+.cat.on{background:var(--pri);color:var(--priT);border-color:var(--pri)}
+.btns{display:flex;gap:8px;margin-top:16px}
+.gh{border:1px solid var(--line);background:none;color:var(--text);border-radius:14px;font:inherit;font-weight:700;padding:14px 18px;cursor:pointer}
+.btn{flex:1;border:none;border-radius:14px;background:var(--pri);color:var(--priT);font:inherit;font-size:17px;font-weight:800;padding:14px;cursor:pointer}
+.danger{border:none;border-radius:14px;background:var(--bad);color:#fff;font:inherit;font-weight:800;padding:14px 18px;cursor:pointer}
+.ghost{width:100%;margin-top:10px;border:1px solid var(--line);background:none;color:var(--text);border-radius:14px;padding:12px;font:inherit;cursor:pointer}
+.setup{text-align:center}.setup .big{font-size:52px}.setup h2{margin:4px 0}.setup p{color:var(--muted);margin:0 0 12px}.setup .btn{width:100%;margin-top:10px}
+.foot{margin-top:26px;display:flex;flex-direction:column;gap:8px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>جدول سكشن 12</h1>
-  <div class="sub">الفرقة الأولى · مجموعة 1-2 · الترم الأول</div>
-
-  <div class="lbl">اختار الأسبوع</div>
-  <div class="seg" id="weeks"></div>
-
-  <div class="lbl">اختار اليوم</div>
-  <div class="days" id="days"></div>
-  <button class="today" id="goToday">⟲ ارجع لليوم</button>
-  <div class="note" id="fri"></div>
-
-  <div class="head"><h2 id="dayTitle"></h2><span class="cnt" id="cnt"></span></div>
-  <div id="list"></div>
-
-  <div class="set">
-    <div class="lbl">أنا حاليًا في أنهي أسبوع؟</div>
-    <div class="seg" id="setWeek"></div>
-    <div class="note">الأسبوع بيتبدّل لوحده كل سبت، فاختار مرة واحدة بس.</div>
-  </div>
+  <div class="top"><button class="nav" data-a="prev" aria-label="الشهر اللي فات">→</button><h1 id="mt"></h1><button class="nav" data-a="next" aria-label="الشهر الجاي">←</button></div>
+  <div id="main"></div>
 </div>
-
+<button class="fab" id="fab" data-a="add" hidden>＋ مصروف جديد</button>
+<div class="ov" id="ov" hidden><div class="sheet" id="sh"></div></div>
+<input type="file" id="file" accept="application/json" hidden>
 <script>
-const DAYS=["السبت","الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس"];
-const T={1:["فترة 1","8:30 – 10:10 ص"],2:["فترة 2","10:20 ص – 12:00 م"],3:["فترة 3","12:20 – 2:00 م"],4:["فترة 4","2:10 – 3:50 م"],5:["فترة 5","4:00 – 5:40 م"],6:["فترة 6","5:50 – 7:30 م"],o1:["أونلاين 1","7:30 – 9:00 م"],o2:["أونلاين 2","9:00 – 10:30 م"]};
-const PROG="مقدمة للبرمجة وحل المشكلات",MC="رياضيات تكميلية (علمي علوم)",COM="مهارات الاتصال والجوانب الأخلاقية والمهنية",ELE="أساسيات الإلكترونيات والدوائر الكهربية",INT="مقدمة الحاسبات والمعلوماتية",M1="رياضيات 1 لعلوم الحاسب",ENG="لغة إنجليزية لعلوم الحاسب";
-const dELE="أ.م.د/ نهال صقر، د/ نيرة العزب",dMC="أ.د/ شريف بركات",dM1="أ.د/ سمير الموجي، أ.م.د/ رشا صقر، د/ عمرو الأدكاوي",dPROG="أ.د/ محمد أبو السعود، د/ محمد حجاج",dINT="د/ أمل أبو العينين، د/ نجوى العربي، د/ هالة عكاشة",dENG="د/ هبة قنديل، د/ ياسمين الصقار",dCOM="أ.د/ حازم البكري، د/ شاهنده الخولي";
-// [slot, kind s=سكشن l=محاضرة, mode i=حضوري o=أونلاين, subject, details]
-const W={
-1:[
- [[1,'s','i',PROG,"A4 · زياد عبدالفتاح"],[2,'s','i',MC,"قاعة 1 · محمد العطوي"],[4,'s','i',COM,"قاعة 6 · منة الله أحمد"]],
- [],
- [[4,'s','i',ELE,"قاعة 3 (Hardware) · ندى محمد"],[5,'s','i',INT,"C6 · محمد سلامة"],["o1",'l','o',ELE,dELE],["o2",'l','o',MC,dMC]],
- [["o1",'l','o',M1,dM1],["o2",'l','o',PROG,dPROG]],
- [["o2",'l','o',INT,dINT]],
- [[1,'s','i',M1,"قاعة 3 (Hardware) · أميرة سامي"],[2,'s','i',ENG,"قاعة 1 · خلود عامر"],["o1",'l','o',COM,dCOM],["o2",'l','o',ENG,dENG]]
-],
-2:[
- [],
- [["o1",'s','o',COM,"منة الله أحمد"],["o2",'s','o',ELE,"ندى محمد"]],
- [[1,'l','i',MC,dMC+" · مدرج 1"],[3,'l','i',ELE,dELE+" · مدرج 2"],["o1",'s','o',PROG,"زياد عبدالفتاح"],["o2",'s','o',MC,"محمد العطوي"]],
- [[3,'l','i',COM,dCOM+" · مدرج 2"],[4,'l','i',M1,dM1+" · مدرج 1"],["o1",'s','o',M1,"أميرة سامي"]],
- [[2,'l','i',INT,dINT+" · مدرج 1"],["o2",'s','o',INT,"محمد سلامة"]],
- [[3,'l','i',PROG,dPROG+" · مدرج 1"],[4,'l','i',ENG,dENG+" · مدرج 3"],["o2",'s','o',ENG,"خلود عامر"]]
-]};
-
+const KEY="budget_v1";
+let db={};try{db=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){alert("مش قادر أحفظ البيانات على التليفون")}};
 const $=s=>document.querySelector(s);
-const startOf=d=>{const x=new Date(d.getFullYear(),d.getMonth(),d.getDate());x.setDate(x.getDate()-((x.getDay()+1)%7));return x};
-const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
-const parse=s=>{const[a,b,c]=s.split("-").map(Number);return new Date(a,b-1,c)};
-let anchor={start:"2026-10-17",week:1};
-try{const s=localStorage.getItem("anchor");if(s)anchor=JSON.parse(s)}catch(e){}
+const MN=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+const CATS=[["food","🛒","أكل وخضار"],["meat","🍗","لحوم ودواجن"],["bills","💡","فواتير"],["rent","🏠","إيجار"],["trans","🚌","مواصلات"],["med","💊","علاج ودواء"],["school","🎒","مدارس ودروس"],["cloth","👕","ملابس"],["net","📱","نت وموبايل"],["clean","🧼","نظافة"],["gift","🎁","مناسبات وهدايا"],["other","✨","أخرى"]];
+const cat=id=>CATS.find(c=>c[0]===id)||CATS[11];
+const pad=n=>String(n).padStart(2,"0");
+const isoOf=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const now=new Date();let cur=isoOf(now).slice(0,7),tab="list",pc=null;
+const shift=(k,n)=>{let [y,m]=k.split("-").map(Number);m+=n;while(m>12){m-=12;y++}while(m<1){m+=12;y--}return y+"-"+pad(m)};
+const fmt=n=>Number(n).toLocaleString("en",{maximumFractionDigits:2});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const getM=()=>db[cur]||(db[cur]={budget:null,exp:[]});
+const open=h=>{$("#sh").innerHTML=h;$("#ov").hidden=false};
+const close=()=>{$("#ov").hidden=true};
 
-const now=new Date(),isFri=now.getDay()===5;
-const ref=new Date(now.getFullYear(),now.getMonth(),now.getDate()+(isFri?1:0));
-const todayIdx=isFri?0:(now.getDay()+1)%7;
-const curWeek=()=>{const n=Math.round((startOf(ref)-parse(anchor.start))/6048e5);return((n%2)+2)%2===0?anchor.week:3-anchor.week};
-
-let wk=curWeek(),dy=todayIdx;
+function dayLabel(d){const t=isoOf(now),y=isoOf(new Date(now.getFullYear(),now.getMonth(),now.getDate()-1));
+  if(d===t)return"النهارده";if(d===y)return"إمبارح";const[a,b,c]=d.split("-");return c+"/"+b+"/"+a}
 
 function render(){
-  const cw=curWeek();
-  $("#weeks").innerHTML=[1,2].map(n=>`<button class="${n===wk?"on":""}" data-w="${n}">الأسبوع ${n}${n===cw?'<span class="badge">الحالي</span>':""}</button>`).join("");
-  $("#setWeek").innerHTML=[1,2].map(n=>`<button class="${n===cw?"on":""}" data-s="${n}">أسبوع ${n}</button>`).join("");
-  $("#days").innerHTML=DAYS.map((d,i)=>`<button class="${i===dy?"on":""} ${(i===todayIdx&&wk===cw)?"td":""}" data-d="${i}">${d}</button>`).join("");
-  $("#fri").textContent=isFri?"النهارده الجمعة، فبعرض لك السبت الجاي.":"";
-  const items=W[wk][dy];
-  $("#dayTitle").textContent=DAYS[dy];
-  const inN=items.filter(x=>x[2]==="i").length,onN=items.length-inN;
-  $("#cnt").textContent=items.length?`${inN} حضوري · ${onN} أونلاين`:"";
-  $("#list").innerHTML=items.length?items.map(([sl,k,m,sj,dt])=>{
-    const [nm,tm]=T[sl];
-    return `<div class="card ${m}"><div class="tm"><div class="t1" dir="ltr" style="text-align:right">${tm}</div><div class="t2">${nm}</div></div><div class="bd"><div class="tg">${k==="s"?"سكشن":"محاضرة"} · ${m==="i"?"حضوري":"أونلاين"}</div><div class="sj">${sj}</div><div class="dt">${dt}</div></div></div>`;
-  }).join(""):`<div class="off">إجازة 🌴<br><small>مفيش حاجة النهارده</small></div>`;
-}
+  const m=db[cur]||{budget:null,exp:[]};const [y,mo]=cur.split("-").map(Number);
+  $("#mt").textContent=MN[mo-1]+" "+y;const root=$("#main"),fab=$("#fab");
+  if(m.budget==null){fab.hidden=true;const p=db[shift(cur,-1)];
+    root.innerHTML=`<div class="card setup"><div class="big">💰</div><h2>ابدأ ميزانية ${MN[mo-1]}</h2><p>اكتب المبلغ الكامل اللي معاك للشهر ده</p><input id="bud" type="number" inputmode="decimal" placeholder="مثلًا 5000"><button class="btn" data-a="start">ابدأ الشهر</button>${p&&p.budget!=null?`<button class="ghost" data-a="same">نفس مبلغ الشهر اللي فات (${fmt(p.budget)} جنيه)</button>`:""}</div>`;
+    return}
+  fab.hidden=false;
+  const spent=m.exp.reduce((s,e)=>s+e.amt,0),rem=m.budget-spent,pct=m.budget>0?Math.max(0,Math.min(100,spent/m.budget*100)):100;
+  const cls=rem<=0?"bad":rem<=m.budget*0.2?"warn":"";let msg="";
+  if(rem<0)msg=`⚠️ عدّيت الميزانية بـ ${fmt(-rem)} جنيه`;
+  else if(rem===0)msg="⚠️ الميزانية خلصت";
+  else if(cls==="warn")msg="⚠️ فاضل أقل من 20% من الميزانية";
+  if(rem>0&&cur===isoOf(now).slice(0,7)){const left=new Date(y,mo,0).getDate()-now.getDate()+1;msg+=(msg?"<br>":"")+`يعني تقدر تصرف حوالي ${fmt(Math.floor(rem/left))} جنيه في اليوم`}
+  let h=`<div class="card bal ${cls}"><div class="lbl">المتبقي</div><div class="amt">${fmt(rem)} <small>جنيه</small></div><div class="bar"><i style="width:${pct}%"></i></div><div class="meta"><span>صرفت ${fmt(spent)}</span><span>من ${fmt(m.budget)} <button class="lnk" data-a="eb">تعديل</button></span></div>${msg?`<div class="msg">${msg}</div>`:""}</div>
+  <div class="tabs"><button class="${tab==="list"?"on":""}" data-a="tl">المصروفات</button><button class="${tab==="sum"?"on":""}" data-a="ts">الملخص</button></div>`;
+  if(!m.exp.length)h+=`<div class="empty">لسه مفيش مصروفات.<br>اضغط على "مصروف جديد" وسجّل أول مصروف.</div>`;
+  else if(tab==="list"){const ex=[...m.exp].sort((a,b)=>b.d<a.d?-1:b.d>a.d?1:0);let last="";
+    for(const e of ex){if(e.d!==last){h+=`<div class="day">${dayLabel(e.d)}</div>`;last=e.d}const c=cat(e.cat);
+      h+=`<div class="row" data-a="ed" data-id="${e.id}"><div class="ic">${c[1]}</div><div class="rt"><b>${c[2]}</b>${e.note?`<span>${esc(e.note)}</span>`:""}</div><div class="rm">${fmt(e.amt)}</div></div>`}}
+  else{const t={};m.exp.forEach(e=>t[e.cat]=(t[e.cat]||0)+e.amt);
+    h+=`<div class="card sum">`+Object.entries(t).sort((a,b)=>b[1]-a[1]).map(([k,v])=>{const c=cat(k);return`<div class="top2"><span>${c[1]} ${c[2]}</span><span>${fmt(v)} (${Math.round(v/spent*100)}%)</span></div><div class="pb"><i style="width:${v/spent*100}%"></i></div>`}).join("")+`</div>`}
+  if(tab==="sum")h+=`<div class="day">النسخ الاحتياطي والبيانات</div><div class="foot"><button class="ghost" data-a="bk">⬇️ حفظ نسخة احتياطية</button><button class="ghost" data-a="rs">⬆️ استرجاع نسخة احتياطية</button><button class="ghost" data-a="wipe">🗑️ مسح بيانات الشهر ده</button></div>`;
+  root.innerHTML=h}
 
-document.addEventListener("click",e=>{
-  const b=e.target.closest("button");if(!b)return;
-  if(b.dataset.w){wk=+b.dataset.w}
-  else if(b.dataset.d){dy=+b.dataset.d}
-  else if(b.dataset.s){anchor={start:iso(startOf(ref)),week:+b.dataset.s};try{localStorage.setItem("anchor",JSON.stringify(anchor))}catch(e){}wk=curWeek();dy=todayIdx}
-  else if(b.id==="goToday"){wk=curWeek();dy=todayIdx}
-  render();
+function expForm(e){pc=e?e.cat:null;const d=e?e.d:(cur===isoOf(now).slice(0,7)?isoOf(now):cur+"-01");
+  open(`<h3>${e?"تعديل مصروف":"مصروف جديد"}</h3><label>المبلغ (جنيه)</label><input id="fa" type="number" inputmode="decimal" placeholder="0" value="${e?e.amt:""}"><label>اختار النوع</label><div class="cats">${CATS.map(c=>`<button type="button" class="cat ${pc===c[0]?"on":""}" data-a="pick" data-c="${c[0]}"><span>${c[1]}</span>${c[2]}</button>`).join("")}</div><label>ملاحظة (اختياري)</label><input id="fn" placeholder="مثلًا: خضار من السوق" value="${e?esc(e.note||""):""}"><label>التاريخ</label><input id="fd" type="date" value="${d}"><div class="btns"><button class="btn" data-a="saveE" data-id="${e?e.id:""}">حفظ</button><button class="gh" data-a="cl">رجوع</button>${e?`<button class="danger" data-a="delE" data-id="${e.id}">مسح</button>`:""}</div>`);
+  if(!e)setTimeout(()=>$("#fa").focus(),50)}
+
+document.addEventListener("click",ev=>{
+  if(ev.target.id==="ov"){close();return}
+  const t=ev.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,id=t.dataset.id;
+  if(a==="prev"){cur=shift(cur,-1);render()}
+  else if(a==="next"){cur=shift(cur,1);render()}
+  else if(a==="start"){const v=parseFloat($("#bud").value);if(!(v>0)){alert("اكتب المبلغ الأول");return}getM().budget=v;save();render()}
+  else if(a==="same"){getM().budget=db[shift(cur,-1)].budget;save();render()}
+  else if(a==="eb"){open(`<h3>مبلغ الشهر</h3><label>المبلغ الكامل (جنيه)</label><input id="fb" type="number" inputmode="decimal" value="${getM().budget}"><div class="btns"><button class="btn" data-a="saveB">حفظ</button><button class="gh" data-a="cl">رجوع</button></div>`)}
+  else if(a==="saveB"){const v=parseFloat($("#fb").value);if(!(v>0)){alert("اكتب مبلغ صحيح");return}getM().budget=v;save();close();render()}
+  else if(a==="add"){expForm(null)}
+  else if(a==="cl"){close()}
+  else if(a==="ed"){expForm(getM().exp.find(e=>e.id===id))}
+  else if(a==="pick"){pc=t.dataset.c;document.querySelectorAll(".cat").forEach(b=>b.classList.toggle("on",b.dataset.c===pc))}
+  else if(a==="saveE"){const amt=parseFloat($("#fa").value);if(!(amt>0)){alert("اكتب المبلغ");return}if(!pc){alert("اختار نوع المصروف");return}
+    const note=$("#fn").value.trim(),d=$("#fd").value||isoOf(now),m=getM();
+    if(id){const e=m.exp.find(x=>x.id===id);Object.assign(e,{cat:pc,amt,note,d})}else m.exp.push({id:Date.now().toString(36),cat:pc,amt,note,d});
+    save();close();render()}
+  else if(a==="delE"){if(confirm("تمسح المصروف ده؟")){const m=getM();m.exp=m.exp.filter(x=>x.id!==id);save();close();render()}}
+  else if(a==="tl"){tab="list";render()}else if(a==="ts"){tab="sum";render()}
+  else if(a==="bk"){const b=new Blob([JSON.stringify(db)],{type:"application/json"}),l=document.createElement("a");l.href=URL.createObjectURL(b);l.download="مصروف-البيت-نسخة.json";l.click()}
+  else if(a==="rs"){$("#file").click()}
+  else if(a==="wipe"){if(confirm("هيتمسح كل اللي في الشهر ده. متأكد؟")){delete db[cur];save();render()}}
 });
+$("#file").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const o=JSON.parse(r.result);if(typeof o!=="object"||!o)throw 0;if(confirm("هيتم استبدال كل البيانات الحالية بالنسخة دي. متأكد؟")){db=o;save();render()}}catch(x){alert("الملف ده مش نسخة صحيحة")}e.target.value=""};r.readAsText(f)});
 render();
 if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}
 </script>
